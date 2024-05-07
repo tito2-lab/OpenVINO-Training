@@ -23,7 +23,7 @@ For running LLM models, I recommend to use Intel 12th Gen platform or later. If 
 
 2. Setup Virtual Environment
    
-   (What is Virtual Environment??) <= under constructing...
+   ** Details on Training: (What is Virtual Environment??) **
    
    Open comandline prompt (cmd.exe). You can confirm python 3.11.8 is installed with typing "python". (exit() for finshing python prompt)
    ```
@@ -36,7 +36,7 @@ For running LLM models, I recommend to use Intel 12th Gen platform or later. If 
 
 3. Download "requirements.txt" to under "ov_env" folder to install required libraries. Then type as below.
 
-   (What is pip, libraries and requirements?) <= under constructing..
+   ** Details on Training: (What is pip, libraries and requirements?) **
    
    ```
    cd %USERPROFILE%ov_env
@@ -90,6 +90,59 @@ To be added
           os.makedirs(f'{model_name}/INT4')
           ov.save_model(compressed_model, f'{model_name}/INT4/openvino_model.xml')
       ```
+
+   3. Compile the OV model
+      ```
+      tokenizer = AutoTokenizer.from_pretrained(model_id)
+
+      ov_model = OVModelForCausalLM.from_pretrained(
+          model_id = f'{model_name}/INT4',
+          device=device,
+          ov_config={"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": "./cache"},
+          config=AutoConfig.from_pretrained(model_id)
+      )
+      ```
+
+   4. Test the model
+      ```
+      def build_prompt(user_query, inputs="", sep="\n\n### "):
+          sys_msg = "以下は、タスクを説明する指示と、文脈のある入力の組み合わせです。要求を適切に満たす応答を書きなさい。"
+          p = sys_msg
+          roles = ["指示", "応答"]
+          msgs = [": \n" + user_query, ": "]
+          if inputs:
+              roles.insert(1, "入力")
+              msgs.insert(1, ": \n" + inputs)
+          for role, msg in zip(roles, msgs):
+              p += sep + role + msg
+          return p
+
+      # Infer with prompt without any additional input
+      query = input('質問をいれてください:')
+      user_inputs = {
+          "user_query": query,
+          "inputs": ""
+      }
+      prompt = build_prompt(**user_inputs)
+      
+      print(f'** Prompt:\n{prompt}\n-------------------------')
+      input_tokens = tokenizer(prompt, return_tensors='pt', add_special_tokens=False)
+      streamer = TextStreamer(tokenizer, skip_prompt=True, skip_special_tokens=True)
+      response = ov_model.generate(**input_tokens, 
+                                   pad_token_id=tokenizer.eos_token_id,
+                                   eos_token_id=tokenizer.eos_token_id,
+                                   max_new_tokens=300,
+                                   num_return_sequences=1,
+                                   temperature=1.0,
+                                   do_sample=True,
+                                   top_k=5,
+                                   top_p=0.90,
+                                   repetition_penalty=1.2,
+                                   streamer=streamer)
+
+      ```
+
+
       
 
    
