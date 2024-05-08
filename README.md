@@ -4,8 +4,7 @@
       1. Install Python (3.11.8)
       2. Setup Virtual Environment
       3. Install required libraries.
-   3. MAC OS
-   4. Or on Google Colab
+   4. Or you can try on Google Colab
 3. Run on Jupyter Lab
 4. Next steps...
 
@@ -48,8 +47,6 @@ For running LLM models, I recommend to use Intel 12th Gen platform or later. If 
    Listing libraries <= 
    ```
 
-### Mac OS
-To be added
 ### On Google Colab
 1. Download "ov_training_llm_colab.ipynb"
 2. Go to [Googl Colab](https://colab.google/). (you need google account yourself.)
