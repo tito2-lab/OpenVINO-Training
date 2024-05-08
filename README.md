@@ -56,7 +56,7 @@ To be added
 3. Click "Open Colab"
 4. "Upload" -> select "ov_training_llm_colab.ipynb"
 
-* Google Colab uses nVidia GPU so OpenVINO can't use on it. So set device to CPU as inference engine. 
+* Google Colab uses nVidia GPU so OpenVINO can't be used on it. So set device to CPU as inference engine. 
 
 
 ## Let's run LLM on Jupyer Lab
