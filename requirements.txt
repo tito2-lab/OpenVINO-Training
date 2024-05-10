@@ -1,8 +1,8 @@
-! pip install optimum-intel==1.16.1
-! pip install openvino==2024.1.0
-! pip install nncf==2.8.0
-! pip install numpy==1.26.4
-! pip install einops==0.7.0
-! pip install onnx==1.16.0
-! pip install gradio==4.19.2
-! pip install scipy==1.12.0
+pip install optimum-intel==1.16.1
+pip install openvino==2024.1.0
+pip install nncf==2.8.0
+pip install numpy==1.26.4
+pip install einops==0.7.0
+pip install onnx==1.16.0
+pip install gradio==4.19.2
+pip install scipy==1.12.0
