@@ -5,3 +5,4 @@
 ! pip install einops==0.7.0
 ! pip install onnx==1.16.0
 ! pip install gradio==4.19.2
+! pip install scipy==1.12.0
