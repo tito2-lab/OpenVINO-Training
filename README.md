@@ -56,91 +56,39 @@ For running LLM models, I recommend to use Intel 12th Gen platform or later. If 
 
 ## Let's run LLM on Jupyer Lab
 
-1. Download required package from Github
-   ```
-   cd %USERPROFILE%ov_env
-   git clone https://github.com/Stability-AI/model-demo-notebooks.git
-   ```
-2. Run Jupyter Lab
-   ```
-   cd jslm_chatbot_demo_on_mobile_pc
-   jupyter lab
-   ```
-3. On the jupyter notebook, please try to run all cells.
-   1. import required libraries, set targeted models (stabilityai/japanese-stablelm-3b-4e1t-instruct) and device (GPU).
-      ```
-      from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig, TextStreamer
-      from optimum.intel import OVModelForCausalLM
-      import openvino as ov
-      import os
-      import nncf
-      
-      model_id = 'stabilityai/japanese-stablelm-3b-4e1t-instruct'
-      #model_id = 'meta-llama/Meta-Llama-3-8B-Instruct'
-      
-      model_vendor, model_name = model_id.split('/')
-      device = 'GPU'
-      ```
-  
-   2. Convert to OV Model and quantized, then save it to local
-      ```
-      if not os.path.exists(f'{model_name}/INT4'):
-          ov_model=OVModelForCausalLM.from_pretrained(model_id, config=AutoConfig.from_pretrained(model_id, revision="model_class_update", trust_remote_code=True), revision="model_class_update", export=True, compile=False, load_in_8bit=False, trust_remote_code=True)
-          compressed_model = nncf.compress_weights(ov_model.half()._original_model, mode=nncf.CompressWeightsMode.INT4_ASYM, group_size=128, ratio=0.8)
-          os.makedirs(f'{model_name}/INT4')
-          ov.save_model(compressed_model, f'{model_name}/INT4/openvino_model.xml')
-      ```
+Let's dive into LLM local enablement process. 
+![ov_training_llm.ipynb](https://github.com/tito2-lab/OpenVINO-Training/blob/main/ov_training_llm.ipynb)
 
-   3. Compile the OV model
-      ```
-      tokenizer = AutoTokenizer.from_pretrained(model_id)
+This time, we use Tiny Llama, very lightweight model for time restrction, but your can apply to almost LLM models on Hugging Face with same process :)
 
-      ov_model = OVModelForCausalLM.from_pretrained(
-          model_id = f'{model_name}/INT4',
-          device=device,
-          ov_config={"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": "./cache"},
-          config=AutoConfig.from_pretrained(model_id)
-      )
-      ```
 
-   4. Test the model
-      ```
-      def build_prompt(user_query, inputs="", sep="\n\n### "):
-          sys_msg = "以下は、タスクを説明する指示と、文脈のある入力の組み合わせです。要求を適切に満たす応答を書きなさい。"
-          p = sys_msg
-          roles = ["指示", "応答"]
-          msgs = [": \n" + user_query, ": "]
-          if inputs:
-              roles.insert(1, "入力")
-              msgs.insert(1, ": \n" + inputs)
-          for role, msg in zip(roles, msgs):
-              p += sep + role + msg
-          return p
+## Next .. your turn! 
 
-      # Infer with prompt without any additional input
-      query = input('質問をいれてください:')
-      user_inputs = {
-          "user_query": query,
-          "inputs": ""
-      }
-      prompt = build_prompt(**user_inputs)
-      
-      print(f'** Prompt:\n{prompt}\n-------------------------')
-      input_tokens = tokenizer(prompt, return_tensors='pt', add_special_tokens=False)
-      streamer = TextStreamer(tokenizer, skip_prompt=True, skip_special_tokens=True)
-      response = ov_model.generate(**input_tokens, 
-                                   pad_token_id=tokenizer.eos_token_id,
-                                   eos_token_id=tokenizer.eos_token_id,
-                                   max_new_tokens=300,
-                                   num_return_sequences=1,
-                                   temperature=1.0,
-                                   do_sample=True,
-                                   top_k=5,
-                                   top_p=0.90,
-                                   repetition_penalty=1.2,
-                                   streamer=streamer)
+Now you'll work over 100 samples on OpenVINO(TM) Notebooks!! 
+https://github.com/openvinotoolkit/openvino_notebooks
 
-      ```
+You know how to setup environment on your system. 
+- you may need to install [git](https://git-scm.com/download/win) command for windows system
+- or youcan download zip file from the git link directly
+- 
+```
+python -m venv sampleenv
+sampleenv\Scripts\activate
+cd sampleenv
+git clone https://github.com/openvinotoolkit/openvino_notebooks.git
+cd openvino_notebooks-latest
+pip install -r requirements.txt
+```
+
+In note books, sample scripts are listed on Jupyter Lab, try!!
+
+Here are some recommendataions you'll have fun. 
+- [Stable Diffusion](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/stable-diffusion-v2)
+- [Riffusion (txt to music)](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/riffusion-text-to-music)
+- [YoLov8](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/yolov8-optimization)
+- [LLM RAG](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/llm-rag-langchain)
+
+
 
 
       
