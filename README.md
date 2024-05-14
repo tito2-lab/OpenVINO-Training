@@ -88,7 +88,9 @@ Here are some recommendataions you'll have fun.
 - [Riffusion (txt to music)](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/riffusion-text-to-music)
 -    ![](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/riffusion-text-to-music/riffusion-text-to-music.png)
 - [YoLov8](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/yolov8-optimization)
+-    <img src="yolo_example.png" width="50%">
 - [LLM RAG](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/llm-rag-langchain)
+-    <img src="llmrag_example.png" width="50%">
 
 
 
