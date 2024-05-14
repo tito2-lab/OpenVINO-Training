@@ -78,7 +78,7 @@ pip install -r requirements.txt
 
 In note books, sample scripts are listed on Jupyter Lab, try!!
 
-Here are some recommendataions you'll have fun. 
+Here are some recommendataions you'll have fun with. 
 - [Stable Diffusion](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/stable-diffusion-v2)
 -    ![](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/stable-diffusion-v2/stable-diffusion-v2-infinite-zoom.gif)
 - [Riffusion (txt to music)](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/riffusion-text-to-music)
