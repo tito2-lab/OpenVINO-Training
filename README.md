@@ -78,6 +78,11 @@ pip install -r requirements.txt
 then you can run samples in notebooks directory. 
 
 In note books, sample scripts are listed on Jupyter Lab, try!!
+First steps:
+- OpenVINO™ Runtime API Tutorial
+- Hello Image Classification
+- Hello Image Segmentation
+- Hello Object Detection
 
 Here are some recommendataions you'll have fun with. 
 - [Stable Diffusion](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/stable-diffusion-v2)
