@@ -75,6 +75,7 @@ git clone https://github.com/openvinotoolkit/openvino_notebooks.git
 cd openvino_notebooks-latest
 pip install -r requirements.txt
 ```
+then you can run samples in notebooks directory. 
 
 In note books, sample scripts are listed on Jupyter Lab, try!!
 
