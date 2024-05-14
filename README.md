@@ -45,7 +45,7 @@ For running LLM models, I recommend to use Intel 12th Gen platform or later. If 
 3. Click "Open Colab"
 4. "Upload" -> select "ov_training_llm_colab.ipynb"
 
-* Google Colab uses nVidia GPU which OpenVINO doesn't,. So device is set to CPU as inference engine.
+* Google Colab uses nVidia GPU which OpenVINO doesn't support, So device is set to CPU as inference engine.
 * if you failed at importing optimum.intel, please "restart session" and run process again.
   ![](colab_error.png)
 
