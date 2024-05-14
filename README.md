@@ -22,8 +22,6 @@ For running LLM models, I recommend to use Intel 12th Gen platform or later. If 
 
 2. Setup Virtual Environment
    
-   ** Details on Training: (What is Virtual Environment??) **
-   
    Open comandline prompt (cmd.exe). You can confirm python 3.11.8 is installed with typing "python". (exit() for finshing python prompt)
    ```
    cd %USERPROFILE%
@@ -34,8 +32,6 @@ For running LLM models, I recommend to use Intel 12th Gen platform or later. If 
    ![](venv.png)
 
 3. Download "requirements.txt" to under "ov_env" folder to install required libraries. Then type as below.
-
-   ** Details on Training: (What is pip, libraries and requirements?) **
    
    ```
    cd %USERPROFILE%ov_env
