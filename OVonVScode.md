@@ -52,11 +52,7 @@
 
   ![](images/vscode6.png)
 
-  - check requirements.txt then click OK
-
-  ![](images/vscode7.png)
-
-  - Cofirmed current environment is ".venv"
+  - Cofirm current environment is ".venv"
 
   ![](images/vscode8.png)
 
