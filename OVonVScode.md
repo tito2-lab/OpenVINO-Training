@@ -34,27 +34,27 @@
 
   - click "Python Envoronments.."
 
-  ![](images/vscode3.png")
+  ![](images/vscode3.png)
 
   - click "+ Create Python Envoronment"
 
-  ![](images/vscode4.png")
+  ![](images/vscode4.png)
 
   - click "Venv .."
 
-  ![](images/vscode5.png")
+  ![](images/vscode5.png)
 
   - click current your python envonronment. 
 
-  ![](images/vscode6.png")
+  ![](images/vscode6.png)
 
   - check requirements.txt then click OK
 
-  ![](images/vscode7.png")
+  ![](images/vscode7.png)
 
   - Cofirmed current environment is ".venv"
 
-  ![](images/vscode8.png")
+  ![](images/vscode8.png)
 
 
 4. Once finished, please try other tutrials, also try other samples you are interested in.
