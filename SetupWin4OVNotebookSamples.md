@@ -31,12 +31,13 @@
    ov_env\Scripts\activate
    ```
    
-   then you can see as below. When finished type "deactivate"
+   check your see (ov_env) on top of your command prompt line, meaning you're in ov_env virtual environment.
+   to finish virtual env, type 'deactivate'
+
+   
    ![](venv.png)
 
-3. Download openvino_notebooks with GIT command
-
-   check your see (ov_env) on top of your command prompt line, meaning you're in ov_env virtual environment. 
+4. Download openvino_notebooks with GIT command
 
    ```
    cd ov_env
@@ -44,31 +45,31 @@
    cd openvino_notebooks
    ```
 
-4. install required python libraries on your virtual environment.
+5. install required python libraries on your virtual environment.
    
    ```
    pip install -r requirements.txt
    ```
 
-5. go to first folders and run jupyter.
+6. go to first folders and run jupyter.
    
    ```
    cd notebooks
    jupyter lab
    ```
 
-6. Once open Jupyter Lab on your browser, move to "OpenVINO™ Runtime API Tutorial"
+7. Once open Jupyter Lab on your browser, move to "OpenVINO™ Runtime API Tutorial"
    click "openvino-api" folder and open "openvino-api.ipynb" on left plain.
 
    ![](images/notebooks1.png)
    ![](images/notebooks2.png)
    
 
-7. Read instruction and run each cell one by one (click run button or Ctrl-Enter on each cell)
+8. Read instruction and run each cell one by one (click run button or Ctrl-Enter on each cell)
     
    ![](images/notebooks3.png)
 
-8. Once finished, please try other tutrials, also try other samples you are interested in.
+9. Once finished, please try other tutrials, also try other samples you are interested in.
    First steps:
     - [OpenVINO™ Runtime API Tutorial](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/openvino-api/openvino-api.ipynb)
     - [Hello Image Classification](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/hello-world/hello-world.ipynb)
