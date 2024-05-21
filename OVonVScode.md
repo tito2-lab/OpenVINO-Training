@@ -57,7 +57,10 @@
   ![](images/vscode8.png)
 
 
-4. Once finished, please try other tutrials, also try other samples you are interested in.
+4. Read instruction and run each cell one by one (click run button or Ctrl-Enter on each cell)
+
+
+5. Once finished, please try other tutrials, also try other samples you are interested in.
    
    First steps:
     - [OpenVINO™ Runtime API Tutorial](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/openvino-api/openvino-api.ipynb)
