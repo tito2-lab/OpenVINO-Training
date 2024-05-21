@@ -2,31 +2,35 @@
 - Instructions how to setup OpenVINO(TM) enviornment on Microsoft VS Code on Windows PC (Intel(r) Core Ultra)
 - Goal is to run [OpenVINO(TM) Notebooks](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest) sample scripts with CPU/GPU/NPU on your VS code. 
 
+## First to do when you get PC
+- please update GPU and CPU driver
+- https://www.intel.co.jp/content/www/jp/ja/products/details/processors/core-ultra/downloads.html
+  - インテル® Arc™ & Iris® Xe Graphics - Windows*
+  - インテル® NPU ドライバー - Windows*
+- Also run Windows Update
+  - 設定　-> アップデート＆セキュリティ -> Windows Update から更新
+
 ## Download and install VS code. 
 - https://code.visualstudio.com/
 
 ## Setup
 1. Clone OpenVINO(TM) notebook from GIT.
    
-  - Go to explorer, click "Clone Repository" button, input "https://github.com/openvinotoolkit/openvino_notebooks.git" then click "Clone from GitHub"
+  - Go to explorer, click "Clone Repository" button, input "https://github.com/openvinotoolkit/openvino_notebooks.git" then click "Clone from URL"
+
+  ![](images/vscode11.png)
+
   - open the folder selection, create new folder (e.g. ov_notebooks) to download the git.
-  - install required python libraries from "requirements.txt"
 
-  ![](images/vscode1.png)
+  ![](images/vscode12.png)
 
-2. Update openvino library to 2024.0
-  - To use NPU device, update openvino library package to 2024.0
-  - Click "Terminal" on menu bar, then click "New Terminal"
+  - after install finished, open the notebook and go to "openvino-api" (notebooks->openvino-api) then open openvino-api.ipynb
 
-  ![](images/vscode9.png)
-
-  - Terminal appears bottom of window. then type "pip install openvino==2024.0" and click enter.
+  ![](images/vscode13.png)
 
 
-  ![](images/vscode10.png)
 
-
-3. Setup python environment for the git repo
+4. Setup python environment for the git repo
    
   - click current environement button upper right, then click "Select Another Kernel..."
 
@@ -55,6 +59,20 @@
   - Cofirmed current environment is ".venv"
 
   ![](images/vscode8.png)
+
+  - install required python libraries from "requirements.txt" then click "OK"
+
+   ![](images/vscode14.png)
+
+3. Update openvino library to 2024.0
+  - To use NPU device, update openvino library package to 2024.0
+  - Click "Terminal" on menu bar, then click "New Terminal"
+
+  ![](images/vscode9.png)
+
+  - Terminal appears bottom of window. then type "pip install openvino==2024.0" and click enter.
+
+  ![](images/vscode10.png)
 
 
 4. Read instruction and run each cell one by one (click run button or Ctrl-Enter on each cell)
