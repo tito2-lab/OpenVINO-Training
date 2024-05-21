@@ -30,7 +30,7 @@
 
 
 
-4. Setup python environment for the git repo
+2. Setup python environment for the git repo
    
   - click current environement button upper right, then click "Select Another Kernel..."
 
@@ -71,8 +71,9 @@
   ![](images/vscode10.png)
 
 
-4. Read instruction and run each cell one by one (click run button or Ctrl-Enter on each cell)
+4. Now you're ready to start notebooks. Read instruction and execute each cell one by one (click execute button or Ctrl-Enter on each cell)
 
+  ![](images/vscode15.png)
 
 5. Once finished, please try other tutrials, also try other samples you are interested in.
    
