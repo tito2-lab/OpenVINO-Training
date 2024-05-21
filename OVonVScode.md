@@ -58,6 +58,7 @@
 
 
 4. Once finished, please try other tutrials, also try other samples you are interested in.
+   
    First steps:
     - [OpenVINO™ Runtime API Tutorial](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/openvino-api/openvino-api.ipynb)
     - [Hello Image Classification](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/hello-world/hello-world.ipynb)
