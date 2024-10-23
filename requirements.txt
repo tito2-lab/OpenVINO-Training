@@ -3,7 +3,7 @@ openvino==2024.1.0
 nncf==2.8.0
 numpy==1.26.4
 einops==0.7.0
-onnx==1.16.0
+onnx==1.17.0
 gradio==4.36.0
 scipy==1.12.0
 jupyterlab
